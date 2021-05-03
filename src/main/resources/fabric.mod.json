@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "veryusefullmod",
+  "version": "${version}",
+  "name": "VeryUsefullMod",
+  "description": "Well its very usefull as the name suggests and that's it.",
+  "authors": [
+    "GregorSomething"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/veryusefullmod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.gregorsomething.veryusefullmod.VeryUsefullModClient"
+    ],
+    "modmenu": [
+      "me.gregorsomething.veryusefullmod.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "VeryUsefullMod.mixins.json"
+  ]
+}

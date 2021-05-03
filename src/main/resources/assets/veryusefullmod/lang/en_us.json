@@ -1,0 +1,11 @@
+{
+    "text.autoconfig.veryusefullmod.title": "VUMs Config",
+    "text.autoconfig.veryusefullmod.option.filter_enabled": "Is console spam filter enabled",
+    "text.autoconfig.veryusefullmod.option.filter_enabled.@Tooltip": "If enabled, spam is removed",
+    "text.autoconfig.veryusefullmod.option.whitelist": "Blocked phrases/messages:",
+    "text.autoconfig.veryusefullmod.option.whitelist.@Tooltip": "Message containing these phrases will not be sent to log",
+    "text.autoconfig.veryusefullmod.option.chat_commands": "Chat commands",
+    "text.autoconfig.veryusefullmod.option.chat_commands.@Tooltip": "When enabled, client can use VUMs commands",
+    "text.autoconfig.veryusefullmod.option.chat_symbols": "Chat symbols for copy",
+    "text.autoconfig.veryusefullmod.option.chat_symbols.@Tooltip": "List of them, start, end, hover, click seperate with \"##\""
+}
