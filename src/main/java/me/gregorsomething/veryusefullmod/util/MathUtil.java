@@ -1,5 +1,6 @@
 package me.gregorsomething.veryusefullmod.util;
 
+// Not mine
 public class MathUtil {
     public static double eval(final String str) {
         try {
