@@ -1,6 +1,8 @@
 package me.gregorsomething.veryusefullmod.mixin;
 
 import me.gregorsomething.veryusefullmod.VeryUsefullModClient;
+import me.gregorsomething.veryusefullmod.sneakInMorse.MorseMain;
+import me.gregorsomething.veryusefullmod.sneakInMorse.Translator;
 import me.gregorsomething.veryusefullmod.util.Chat;
 import me.gregorsomething.veryusefullmod.util.MathUtil;
 import net.minecraft.client.MinecraftClient;
@@ -55,7 +57,12 @@ public class ClientPlayerEntityMixin {
                     }
                     Chat.send(toSend);
                     break;
+                case "morse":
+                    MorseMain.sendMsg(args);
+                    break;
                 case "test":
+                    Chat.sendMsgClient(Translator.stringToMorse("See siin?"));
+                    Chat.sendMsgClient(Translator.morseToString(Translator.stringToMorse("See siin?")));
                     MinecraftClient mc = MinecraftClient.getInstance();
                     Chat.sendMsgClient("&c&l[VUM]&7 TEST :(");
                     double x = Objects.requireNonNull(mc.cameraEntity).getX();

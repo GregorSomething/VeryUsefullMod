@@ -16,5 +16,14 @@ public class VUMConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public boolean chat_commands = true;
     @ConfigEntry.Gui.Tooltip
-    public  List<String> chat_symbols = new ArrayList<>();
+    public List<String> chat_symbols = new ArrayList<>();
+    @ConfigEntry.Gui.CollapsibleObject
+    public MorseThings morse_things = new MorseThings();
+
+    public static class MorseThings {
+        public boolean morse_msg = false;
+        public boolean regex_primary_bool = true;
+        public String regex_primary = "^\\w* whispers to you: ";
+        public String regex_secondary = "^\\[\\w* -> Me\\]";
+    }
 }
