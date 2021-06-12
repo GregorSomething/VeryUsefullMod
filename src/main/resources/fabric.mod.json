@@ -7,7 +7,9 @@
   "authors": [
     "GregorSomething"
   ],
-  "contact": {},
+  "contact": {
+    "homepage": "https://github.com/GregorSomething/VeryUsefullMod"
+  },
   "license": "MIT",
   "icon": "assets/veryusefullmod/icon.png",
   "environment": "client",

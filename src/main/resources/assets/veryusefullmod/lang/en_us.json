@@ -12,6 +12,7 @@
     "text.autoconfig.veryusefullmod.option.morse_things.morse_msg": "Is morse msg enabled (?morse)",
     "text.autoconfig.veryusefullmod.option.morse_things.regex_primary_bool": "Use primary?",
     "text.autoconfig.veryusefullmod.option.morse_things.regex_primary": "Primary msg regex",
-    "text.autoconfig.veryusefullmod.option.morse_things.regex_secondary": "Secondary msg regex"
-
+    "text.autoconfig.veryusefullmod.option.morse_things.regex_secondary": "Secondary msg regex",
+    "text.autoconfig.veryusefullmod.option.SC_DATA": "Screenshot name and save dir",
+    "text.autoconfig.veryusefullmod.option.SC_DATA.@Tooltip": "For more info look at GitHub"
 }

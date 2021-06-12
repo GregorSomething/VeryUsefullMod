@@ -80,4 +80,4 @@ public class ClientPlayerEntityMixin {
         return str.substring(Math.max(str.length() - 2, 0));
     }
 
-    }
+}

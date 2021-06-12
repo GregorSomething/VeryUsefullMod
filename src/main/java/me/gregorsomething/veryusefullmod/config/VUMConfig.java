@@ -19,6 +19,8 @@ public class VUMConfig implements ConfigData {
     public List<String> chat_symbols = new ArrayList<>();
     @ConfigEntry.Gui.CollapsibleObject
     public MorseThings morse_things = new MorseThings();
+    @ConfigEntry.Gui.Tooltip
+    public String SC_DATA = "%Y.%MO.%D/%h:%m:%s";
 
     public static class MorseThings {
         public boolean morse_msg = false;
