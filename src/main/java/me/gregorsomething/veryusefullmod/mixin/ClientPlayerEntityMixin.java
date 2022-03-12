@@ -10,12 +10,14 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.text.*;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Objects;
 
 @Mixin(ClientPlayerEntity.class)
@@ -32,7 +34,7 @@ public class ClientPlayerEntityMixin {
                 case "calc":
                     Chat.sendMsgClient("&c&l[VUM]&7 Calculate: " + message.substring(6));
                     Chat.sendMsgClient("&c&l[VUM]&7 =" + MathUtil.eval(message.substring(6)));
-                    break;
+                break;
                 case "time":
                     LocalDateTime localDateTime = LocalDateTime.now();
                     Chat.sendMsgClient("&c&l[VUM]&7 Time and date: " +
@@ -42,7 +44,7 @@ public class ClientPlayerEntityMixin {
                             formatNumber(localDateTime.getHour()) + ":" +
                             formatNumber(localDateTime.getMinute()) + ":" +
                             formatNumber(localDateTime.getSecond()));
-                    break;
+                break;
                 case "chat":
                     BaseText toSend = new LiteralText("");
                     BaseText start = new TranslatableText("text.autoconfig.veryusefullmod.option.chat_symbols");
@@ -56,10 +58,36 @@ public class ClientPlayerEntityMixin {
                         }
                     }
                     Chat.send(toSend);
-                    break;
+                break;
                 case "morse":
                     MorseMain.sendMsg(args);
-                    break;
+                break;
+                case "pos":
+                    try {
+                        switch (args[1]) {
+                            //TODO: Viga tekib, pole kasulik, ei toimi nagu peaks
+                            case "1":
+                                VeryUsefullModClient.LOCATOR.setPos1(VeryUsefullModClient.mc.player.getBlockPos(), Integer.parseInt(args[2]));
+                                Chat.sendMsgClient("&c&l[VUM]&7 pos 1 is set");
+                                break;
+                            case "2":
+                                VeryUsefullModClient.LOCATOR.setPos2(VeryUsefullModClient.mc.player.getBlockPos(), Integer.parseInt(args[2]));
+                                Chat.sendMsgClient("&c&l[VUM]&7 pos 2 is set");
+                                break;
+                            case "3":
+                                VeryUsefullModClient.LOCATOR.setPos3(VeryUsefullModClient.mc.player.getBlockPos(), Integer.parseInt(args[2]));
+                                Chat.sendMsgClient("&c&l[VUM]&7 pos 3 is set");
+                                break;
+                            case "calc":
+                                BlockPos pos = VeryUsefullModClient.LOCATOR.calculate();
+                                Chat.sendMsgClient(pos.getX() + " " + pos.getY() + " " + pos.getZ());
+                                break;
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Chat.sendMsgClient("&c&l[VUM]&7 Error:" + e.getMessage());
+                    }
+                break;
                 case "test":
                     Chat.sendMsgClient(Translator.stringToMorse("See siin?"));
                     Chat.sendMsgClient(Translator.morseToString(Translator.stringToMorse("See siin?")));

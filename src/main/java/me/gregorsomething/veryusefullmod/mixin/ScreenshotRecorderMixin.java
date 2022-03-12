@@ -18,7 +18,7 @@ public class ScreenshotRecorderMixin {
     private static MinecraftClient MC = VeryUsefullModClient.mc;
 
     @Inject(method = "getScreenshotFilename(Ljava/io/File;)Ljava/io/File;", at = @At("TAIL"), cancellable = true)
-    private static void getScreenshotFilename(File iDir, CallbackInfoReturnable ci) {
+    private static void getScreenshotFilename(File iDir, CallbackInfoReturnable cir) {
         String scFinal = VeryUsefullModClient.VUM_CONF.SC_DATA;
         LocalDateTime localDateTime = LocalDateTime.now();
 
@@ -74,7 +74,7 @@ public class ScreenshotRecorderMixin {
         while(true) {
             File file = new File(mDir, name + (i == 1 ? "" : "-" + i) + ".png");
             if (!file.exists()) {
-                ci.setReturnValue(file);
+                cir.setReturnValue(file);
                 return;
             }
             ++i;

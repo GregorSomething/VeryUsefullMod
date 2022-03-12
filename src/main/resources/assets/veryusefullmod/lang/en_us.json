@@ -2,6 +2,8 @@
     "text.autoconfig.veryusefullmod.title": "VUMs Config",
     "text.autoconfig.veryusefullmod.option.filter_enabled": "Is console spam filter enabled",
     "text.autoconfig.veryusefullmod.option.filter_enabled.@Tooltip": "If enabled, spam is removed",
+    "text.autoconfig.veryusefullmod.option.cape_elytra": "Cape is enabled when using elytra",
+    "text.autoconfig.veryusefullmod.option.cape_elytra.@Tooltip": "Idk what to write here",
     "text.autoconfig.veryusefullmod.option.whitelist": "Blocked phrases/messages:",
     "text.autoconfig.veryusefullmod.option.whitelist.@Tooltip": "Message containing these phrases will not be sent to log",
     "text.autoconfig.veryusefullmod.option.chat_commands": "Chat commands",
